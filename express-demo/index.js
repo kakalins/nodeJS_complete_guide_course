@@ -28,23 +28,22 @@ app.get('/api/courses', (req, res) => {
 
 app.get('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
-    if (!course) res.status(404).send('Curso com id não encontrado.');
+    if (!course) return res.status(404).send('Curso com id não encontrado.');
     res.send(course);
 });
 
 app.post('/api/courses', (req, res) => {
-    const schema = {
-        name: Joi.string().min(3).required()
-    }
+    const { error } = validateCourse(req.body);
 
-    const result = Joi.valid(req.body.name, schema);
-    console.log(result);
+    //bad request error status = 400
+    if (error) return res.status(400).send(error.message);
 
-    if (!req.body.name || req.body.name.length < 3) {
-        //bad request error status = 400
-        res.status(400).send('Name is required and should be minimum 3 characters');
-        return;
-    }
+
+    // if (!req.body.name || req.body.name.length < 3) {
+    //     //bad request error status = 400
+    //     res.status(400).send('Name is required and should be minimum 3 characters');
+    //     return;
+    // }
 
     const course = {
         id: courses.length + 1,
@@ -54,9 +53,37 @@ app.post('/api/courses', (req, res) => {
     res.send(course);
 });
 
-app.delete('/api/courses', (req, res) => {
+app.put('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if (!course) return res.status(404).send('Curso com id não encontrado.');
 
+    const { error } = validateCourse(req.body);
+
+    //bad request error status = 400
+    if (error) return res.status(400).send(error.message);
+
+    course.name = req.body.name;
+    res.send(course);
+})
+
+app.delete('/api/courses/:id', (req, res) => {
+    //Look up the course
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    //if not found, return 404 error
+    if (!course) return res.status(404).send('Curso não encontrado');
+    //delet the object
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+    //send response
+    res.send(course);
 });
+
+function validateCourse(course) {
+    const schema = Joi.object({
+        name: Joi.string().min(3).required()
+    });
+    return schema.validate({ name: course.name });
+};
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

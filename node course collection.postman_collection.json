@@ -1,0 +1,133 @@
+{
+	"id": "c7b11450-6835-774e-55b2-287f1ec78d56",
+	"name": "node course collection",
+	"description": "",
+	"order": [
+		"4c31027a-fa8b-ea89-889a-ad48ab6d5231",
+		"13fefe41-8bcb-ec8f-9380-58b702675ad1",
+		"3e037993-4c42-4bfd-6239-9065f6d5109a",
+		"4c642acd-7487-b4c9-6466-1c81b62ca086"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1596716957915,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "13fefe41-8bcb-ec8f-9380-58b702675ad1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/courses",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1597063308926,
+			"name": "http://localhost:3000/api/courses",
+			"description": "",
+			"collectionId": "c7b11450-6835-774e-55b2-287f1ec78d56",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"novo curso\"\n}"
+		},
+		{
+			"id": "3e037993-4c42-4bfd-6239-9065f6d5109a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/courses/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "c7b11450-6835-774e-55b2-287f1ec78d56",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:3000/api/courses/1",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1597063409362,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"name\":\"novo curso\"\n}"
+		},
+		{
+			"id": "4c31027a-fa8b-ea89-889a-ad48ab6d5231",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/courses",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "c7b11450-6835-774e-55b2-287f1ec78d56",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:3000/api/courses",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1596716970547,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"name\": \"e\"\n}"
+		},
+		{
+			"id": "4c642acd-7487-b4c9-6466-1c81b62ca086",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/api/courses/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "c7b11450-6835-774e-55b2-287f1ec78d56",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:3000/api/courses/1",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1597067832183,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
