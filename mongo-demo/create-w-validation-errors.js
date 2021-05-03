@@ -17,8 +17,8 @@ const courseSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: ['web', 'mobile', 'network'],
-        //lowercase: true,
-        uppercase: true
+        lowercase: true,
+        //uppercase: true
     },
     author: String,
     //tags: [String],   //to avoid empty string, need custom validator bellow
@@ -47,7 +47,7 @@ const courseSchema = new mongoose.Schema({
     }
 });
 
-const Course = mongoose.model('Course', courseSchema);
+const Course = mongoose.model('Aula', courseSchema);
 
 async function createCourse() {
     // const course = new Course({
@@ -66,9 +66,9 @@ async function createCourse() {
 
     const course = new Course({
         name: 'Node',
-        category: '-',
+        category: 'mobile',
         author: 'Ricardo',
-        //tags: [],
+        tags: ['IOS', 'Android'],
         isPublished: true,
         price: 15
     });
